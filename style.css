@@ -8,6 +8,14 @@ body {
     color: #f4f4f4;
     margin: 0;
     padding: 0;
+    text-align: center;
+}
+
+/* Container to center content */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
 }
 
 /* Logo and Navigation */
@@ -17,25 +25,30 @@ header {
     align-items: center;
     padding: 20px;
     background-color: #565356; /* Darker Green for Header */
+    text-align: center;
 }
 
+/* Signature Font */
 .signature {
     font-family: 'Dancing Script', cursive;
     font-size: 2.5rem;
     color: #fff;
 }
 
+/* Navigation - Large screens */
 nav {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    width: 30%; /* Occupies 30% of the width */
+    margin-left: auto;
 }
 
 nav a {
     color: #fff;
-    margin: 0 15px;
+    margin: 15px 0;
     text-decoration: none;
     font-weight: 700;
-    font-size: 1rem;
+    font-size: 1.2rem;
 }
 
 nav a:hover {
@@ -43,16 +56,30 @@ nav a:hover {
     transition: color 0.3s;
 }
 
+/* Responsive Navigation - Small screens */
+@media (max-width: 750px) {
+    nav {
+        width: 100%; /* Full width on small screens */
+        flex-direction: row; /* Horizontal on small screens */
+        justify-content: center;
+    }
+
+    nav a {
+        margin: 0 10px;
+    }
+}
+
 /* Introduction Section */
 .intro {
     text-align: center;
     margin: 50px 0;
+    padding: 0 20px;
 }
 
 .intro h2 {
     font-size: 1.5rem;
     font-weight: 400;
-    color: #ffffff; /* Gold color */
+    color: #ffffff;
 }
 
 .intro h1 {
@@ -72,17 +99,16 @@ nav a:hover {
 .about {
     text-align: center;
     margin: 30px auto;
-    width: 80%;
-    max-width: 900px;
-    background-color: #2b5461; /* Slightly lighter green for the about box */
     padding: 40px;
+    width: 80%;
+    background-color: #2b5461; /* Slightly lighter green */
     border-radius: 8px;
 }
 
 .about h3 {
     font-size: 1.8rem;
     font-family: 'Playfair Display', serif;
-    color: #ffffff; /* Gold */
+    color: #ffffff;
     margin-bottom: 20px;
 }
 
@@ -93,13 +119,8 @@ nav a:hover {
     color: #f4f4f4;
 }
 
-.left-column {
+.left-column, .right-column {
     flex: 1;
-    margin-right: 20px;
-}
-
-.right-column {
-    flex: 2;
 }
 
 .about p {
@@ -107,73 +128,36 @@ nav a:hover {
     font-size: 1.1rem;
 }
 
-/* Work Experience Section */
-.work-experience-section {
+/* Work Experience and Projects Section */
+section {
     width: 80%;
     margin: 40px auto;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+    padding: 20px;
+    text-align: left;
 }
 
-.job-box {
-    background-color: #fff; /* White background for job boxes */
+.job-box, .project-box {
+    background-color: #fff; /* White background for boxes */
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-    border-left: 5px solid #565356; /* Accent border matching the header/footer */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    border-left: 5px solid #565356;
 }
 
-.job-box h3 {
+.job-box h3, .project-box h2 {
     font-family: 'Playfair Display', serif;
     font-size: 1.5rem;
-    color: #000000; /* Gold color for job titles */
+    color: #080808;
     margin-bottom: 10px;
 }
 
-.job-box p {
+.job-box p, .project-box p {
     font-size: 1rem;
     line-height: 1.6;
-    color: #333; /* Darker text for descriptions */
-}
-
-.job-box ul {
-    list-style-type: disc;
-    margin-left: 20px;
     color: #333;
 }
 
-/* Projects Section */
-.projects-section {
-    width: 80%;
-    margin: 40px auto;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.project-box {
-    background-color: #fff; /* White background for project boxes */
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-    border-left: 5px solid #565356; /* Accent border matching the header/footer */
-}
-
-.project-box h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.5rem;
-    color: #080808; /* Gold color for project titles */
-    margin-bottom: 10px;
-}
-
-.project-box p {
-    font-size: 1rem;
-    line-height: 1.6;
-    color: #333; /* Darker text for descriptions */
-}
-
-.project-box ul {
+.job-box ul, .project-box ul {
     list-style-type: disc;
     margin-left: 20px;
     color: #333;
@@ -190,295 +174,10 @@ nav a:hover {
     text-decoration: none;
     transition: background-color 0.3s ease;
     margin-top: 20px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
 }
 
 .btn:hover {
     background-color: #756785; /* Darker purple on hover */
-}
-
-.btn i {
-    font-size: 1.2rem;
-}
-
-/* Footer */
-footer {
-    text-align: center;
-    padding: 20px;
-    background-color: #565356;
-    color: #ffffff; /* Gold color for footer text */
-    margin-top: 50px;
-    font-size: 1rem;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .work-experience-section,
-    .projects-section {
-        width: 90%;
-    }
-
-    .job-box h3, .project-box h2 {
-        font-size: 1.3rem;
-    }
-}
-
-/* Contact Page Styles */
-.contact-main {
-    display: flex;
-    justify-content: space-around;
-    align-items: flex-start;
-    flex-wrap: wrap;
-    margin: 40px auto;
-    width: 80%;
-    max-width: 1200px;
-}
-
-/* Contact Information Styling */
-.contact-info {
-    background-color: #2b5461; /* Matching color for consistency */
-    padding: 20px;
-    border-radius: 10px;
-    width: 40%;
-    min-width: 300px;
-    color: #fff;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-.contact-info h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.8rem;
-    color: #f9f9f9; /* Gold color */
-    margin-bottom: 10px;
-}
-
-.contact-info p {
-    font-size: 1.1rem;
-    line-height: 1.6;
-    margin: 10px 0;
-}
-
-.contact-info a {
-    color: #f9f9f9;
-    text-decoration: underline;
-}
-
-.contact-info a:hover {
-    color: #756785; /* Gold hover */
-}
-
-/* Contact Form Styling */
-.contact-form {
-    width: 50%;
-    min-width: 300px;
-    padding: 20px;
-}
-
-.contact-form h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.8rem;
-    color: #f9f9f9;
-    margin-bottom: 20px;
-}
-
-.google-form {
-    width: 100%;
-    height: 800px;
-    border: none;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .contact-main {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .contact-info, .contact-form {
-        width: 100%;
-    }
-}
-
-/* Assignments Section */
-.assignments-section {
-    width: 80%;
-    margin: 40px auto;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.assignment-box {
-    background-color: #fff; /* White background for assignment boxes */
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-    border-left: 5px solid #565356; /* Accent border matching the header/footer */
-}
-
-.assignment-box h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.5rem;
-    color: #000000; /* Gold color for assignment titles */
-    margin-bottom: 10px;
-}
-
-.assignment-box p {
-    font-size: 1rem;
-    line-height: 1.6;
-    color: #333; /* Darker text for descriptions */
-}
-
-.assignment-box a {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #565356;
-    color: #fff;
-    font-weight: 700;
-    border-radius: 5px;
-    text-decoration: none;
-    transition: background-color 0.3s ease;
-    margin-top: 20px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.assignment-box a:hover {
-    background-color: #756785; /* Darker purple on hover */
-}
-
-.assignment-box i {
-    font-size: 1.2rem;
-}
-
-.profile-pic {
-    width: 300px; /* Adjust width to your liking */
-    height: 300px; /* Adjust height to create a rectangular shape */
-    margin-bottom: 20px;
-    object-fit: cover; /* This ensures the image covers the defined dimensions */
-}
-
-/* Education Section */
-.education-section {
-    width: 80%;
-    margin: 40px auto;
-    padding: 40px;
-    background-color: #2b5461; /* Slightly lighter green background for consistency */
-    border-radius: 10px;
-    color: #f4f4f4;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-}
-
-.education-section h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.8rem;
-    color: #f9f9f9; /* Gold color */
-    margin-bottom: 20px;
-}
-
-.education-section h3 {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.5rem;
-    color: #f9f9f9; /* Gold color */
-    margin-top: 30px;
-    margin-bottom: 15px;
-}
-
-.education-section p, .education-section ul {
-    font-size: 1.1rem;
-    line-height: 1.8;
-}
-
-.education-section ul {
-    list-style-type: disc;
-    margin-left: 20px;
-    color: #f4f4f4; /* Maintain text color consistency */
-}
-
-.education-section li {
-    margin-bottom: 10px;
-}
-
-/* Leadership Section */
-.leadership-section {
-    width: 80%;
-    margin: 40px auto;
-    padding: 40px;
-    background-color: #2b5461; /* Same color as other sections for consistency */
-    border-radius: 10px;
-    color: #f4f4f4;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-}
-
-.leadership-section h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.8rem;
-    color: #f9f9f9; /* Gold color */
-    margin-bottom: 20px;
-}
-
-.leadership-section h3 {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.5rem;
-    color: #f9f9f9; /* Gold color */
-    margin-top: 30px;
-    margin-bottom: 15px;
-}
-
-.leadership-section p, .leadership-section ul {
-    font-size: 1.1rem;
-    line-height: 1.8;
-}
-
-.leadership-section ul {
-    list-style-type: disc;
-    margin-left: 20px;
-    color: #f4f4f4; /* Maintain text color consistency */
-}
-
-.leadership-section li {
-    margin-bottom: 10px;
-}
-
-/* Skills Section - Mirror the Projects Section */
-.skills-section {
-    width: 80%;
-    margin: 40px auto;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.skill-box {
-    background-color: #fff; /* White background for skill boxes */
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-    border-left: 5px solid #565356; /* Accent border matching the header/footer */
-}
-
-.skill-box h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.5rem;
-    color: #080808; /* Gold color for section titles */
-    margin-bottom: 10px;
-}
-
-.skill-box ul {
-    font-size: 1rem;
-    line-height: 1.6;
-    color: #333; /* Darker text for skills */
-    list-style-type: disc;
-    margin-left: 20px;
-}
-
-.skill-box li {
-    margin-bottom: 10px;
 }
 
 /* Footer */
@@ -491,7 +190,7 @@ footer {
     font-size: 1rem;
 }
 
-/* General calculator styling */
+/* Calculator Styling */
 .calculator {
     display: grid;
     grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
@@ -533,30 +232,16 @@ footer {
     box-shadow: 0 3px 7px rgba(0, 0, 0, 0.2);
 }
 
-/* Styling for the clear button */
-.calculator button:nth-child(8) {
-    background-color: #d390d3;
-    color: rgb(0, 0, 0);
-}
-
-/* Clear button hover effect - orange */
+/* Clear and Power Button Hover Styling */
 .calculator button:nth-child(8):hover {
-    background-color: #e48520;
+    background-color: #e48520; /* Clear button - orange */
 }
 
-/* Styling for the power button */
-.calculator button:nth-child(7) {
-    background-color: #d390d3;
-    color: rgb(0, 0, 0);
-}
-
-/* Power button hover effect - green */
 .calculator button:nth-child(7):hover {
-    background-color: #97c5ab;
+    background-color: #97c5ab; /* Power button - green */
 }
 
-
-/* Styling the result box */
+/* Result Box */
 .result-box {
     grid-column: span 3; /* Spans all three columns */
     margin-top: 10px;
@@ -568,7 +253,7 @@ footer {
     background-color: white;
 }
 
-/* Responsive design */
+/* Responsive Calculator */
 @media (max-width: 600px) {
     .calculator {
         width: 90%;
@@ -588,5 +273,27 @@ footer {
 
     .result-box {
         font-size: 1.2em;
+    }
+}
+
+/* Additional Responsive Adjustments for Sections */
+@media (max-width: 750px) {
+    section {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .about-details {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-details .left-column, .about-details .right-column {
+        margin: 0;
+        width: 100%;
+    }
+
+    .job-box h3, .project-box h2 {
+        font-size: 1.3rem;
     }
 }
