@@ -1,104 +1,19 @@
 /* Import Custom Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Playfair+Display:wght@600&family=Lato:wght@400;700&display=swap');
 
-/* Extra responsiveness for smaller devices */
-
-/* For screens < 600px */
-@media (max-width: 600px) {
+/* For screens smaller than 750px */
+@media (max-width: 749px) {
     /* General styling for smaller devices */
-    body {
-        font-size: 0.9rem;
-        padding: 0 10px;
-    }
-
-    /* Adjusting navigation for smaller screens */
-    nav {
-        flex-direction: row;
-        justify-content: space-around;
-        width: 100%;
-        padding: 10px 0;
-    }
-
-    nav a {
-        font-size: 0.9rem;
-        margin: 0 10px;
-    }
-
-    /* Smaller text sizes for intro */
-    .intro h1 {
-        font-size: 3rem;
-    }
-
-    .intro h2 {
-        font-size: 1.2rem;
-    }
-
-    .tagline {
-        font-size: 1rem;
-    }
-
-    /* Adjust about section on small screens */
-    .about {
-        width: 95%;
-        padding: 20px;
-    }
-
-    .about-details {
-        flex-direction: column;
-    }
-
-    .left-column, .right-column {
-        width: 100%;
-        margin-bottom: 20px;
-    }
-
-    /* Work experience and projects section adjustments */
-    .work-experience-section, .projects-section {
-        width: 95%;
-        margin: 30px auto;
-    }
-
-    .job-box, .project-box {
-        padding: 15px;
-    }
-
-    .job-box h3, .project-box h2 {
-        font-size: 1.3rem;
-    }
-
-    .job-box p, .project-box p {
-        font-size: 0.95rem;
-    }
-
-    /* Contact page responsiveness */
-    .contact-main {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .contact-info, .contact-form {
-        width: 100%;
-    }
-
-    /* Footer text size reduction for smaller devices */
-    footer {
-        font-size: 0.85rem;
-    }
-}
-
-/* For screens between 600px and 750px */
-@media (min-width: 600px) and (max-width: 750px) {
-    /* General styling for medium-sized devices */
     body {
         font-size: 1rem;
         padding: 0 15px;
     }
 
-    /* Adjusting navigation for medium screens */
+    /* Adjusting navigation for smaller screens */
     nav {
         flex-direction: row;
-        justify-content: space-around;
-        width: 100%;
+        justify-content: space-between; /* Updated */
+        width: 100%; /* Updated */
         padding: 15px 0;
     }
 
@@ -169,6 +84,15 @@
     }
 }
 
+/* For screens bigger than 750px */
+@media (min-width: 750px) {
+    nav {
+        width: 30%; /* Do not exceed 30% of the parent's width */
+        flex-direction: column; /* Vertical alignment */
+        padding: 20px; /* Adjust padding as needed */
+    }
+}
+
 /* Global Styles */
 body {
     font-family: 'Lato', sans-serif;
@@ -236,6 +160,9 @@ nav a:hover {
     margin-top: 10px;
 }
 
+
+/*eikhane*/
+
 /* About Section */
 .about {
     text-align: center;
@@ -250,7 +177,7 @@ nav a:hover {
 .about h3 {
     font-size: 1.8rem;
     font-family: 'Playfair Display', serif;
-    color: #ffffff; /* Gold */
+    color: #ffffff; 
     margin-bottom: 20px;
 }
 
@@ -270,7 +197,7 @@ nav a:hover {
     flex: 2;
 }
 
-.about p {
+.about p { 
     line-height: 1.8;
     font-size: 1.1rem;
 }
