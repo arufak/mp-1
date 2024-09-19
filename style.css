@@ -107,8 +107,9 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
+    padding: 15px; /* Padding for the header content */
     background-color: #565356; /* Darker Green for Header */
+    width: 100%;
 }
 
 .signature {
@@ -298,15 +299,6 @@ nav a:hover {
     font-size: 1.2rem;
 }
 
-/* Footer */
-footer {
-    text-align: center;
-    padding: 20px;
-    background-color: #565356;
-    color: #ffffff; /* Gold color for footer text */
-    margin-top: 50px;
-    font-size: 1rem;
-}
 
 /* Responsive Design */
 @media (max-width: 768px) {
@@ -579,7 +571,7 @@ footer {
 /* Footer */
 footer {
     text-align: center;
-    padding: 20px;
+    padding: 20px; /* Padding for footer content */
     background-color: #565356;
     color: #ffffff;
     margin-top: 50px;
