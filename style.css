@@ -677,3 +677,61 @@ footer {
         font-size: 1.2em;
     }
 }
+
+/* References Section */
+.references-section {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.references-section h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2em;
+}
+
+/* Flex Container for References */
+.reference-container {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping of reference boxes */
+    justify-content: space-around; /* Space between items */
+}
+
+/* Individual Reference Box */
+.reference-box {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 15px;
+    padding: 20px;
+    flex: 1 1 30%; /* Flexible box, minimum 30% width */
+    max-width: 30%; /* Maximum width to keep 3 items in a row */
+    box-sizing: border-box; /* Include padding and border in size */
+}
+
+.reference-box h2 {
+    margin-top: 0;
+    font-size: 1.5em;
+    color: #333;
+}
+
+.reference-box p {
+    font-size: 1em;
+    color: #555;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .reference-box {
+        flex: 1 1 45%; /* Adjust width for smaller screens */
+        max-width: 45%; /* 2 items per row */
+    }
+}
+
+@media (max-width: 500px) {
+    .reference-box {
+        flex: 1 1 100%; /* Full width for very small screens */
+        max-width: 100%;
+    }
+}
